@@ -1,177 +1,195 @@
+import { Link } from "react-router-dom";
+
 import Footer from "./components/common/Footer";
 import Header from "./components/common/Header";
 
 const App = () => {
+  const articles = [
+    {
+      id: 1,
+      title: "Building Scalable React Applications: Best Practices",
+      category: "Frontend",
+      image:
+        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      description:
+        "Learn the essential patterns and practices for creating React applications that can grow without becoming unmanageable.",
+      date: "Jul 12, 2023",
+      time: "8 min read",
+      likes: 342,
+      comments: 3,
+      author: {
+        name: "Jane Cooper",
+        role: "Senior Developer",
+        avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+      },
+    },
+    {
+      id: 2,
+      title: "Introduction to TypeScript: Making JavaScript More Robust",
+      category: "TypeScript",
+      image:
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
+      description:
+        "Discover how TypeScript adds static typing to JavaScript, enhancing code quality and developer productivity.",
+      date: "Jun 15, 2023",
+      time: "9 min read",
+      likes: 302,
+      comments: 2,
+      author: {
+        name: "Cody Fisher",
+        role: "Mobile Developer",
+        avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      },
+    },
+    {
+      id: 3,
+      title: "Understanding Node.js Streams for Efficient Data Processing",
+      category: "Backend",
+      image:
+        "https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      description:
+        "Dive into Node.js streams to handle large amounts of data efficiently without overwhelming your memory.",
+      date: "Jun 28, 2023",
+      time: "10 min read",
+      likes: 276,
+      comments: 2,
+      author: {
+        name: "Esther Howard",
+        role: "Full Stack Engineer",
+        avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      },
+    },
+  ];
+
   return (
-    <>
+    <div className="min-h-screen bg-gray-100">
       <Header />
 
-      {/* hero section  */}
-      <section
-        className="bg-cover bg-center h-96 mx-16"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1739989934211-c4614827fc82?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-        }}
-      >
-        <div className="container mx-auto h-full flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-5xl font-bold">Welcome to My Blog</h1>
-            <p className="mt-4 text-xl">
-              Insights, stories, and tips from the world of blogging
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* main content  */}
-      <main className="container mx-auto px-16 py-8">
-        {/* top 3 blogs  */}
-        <section className="mb-12">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-3xl font-bold mb-6">Top Blogs</h2>
-            <a
-              href="#"
-              className="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors duration-300"
-            >
-              See All
-            </a>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Blog Card 1 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img
-                alt="Image of a beautiful sunrise over a mountain range"
-                className="w-full h-48 object-cover"
-                width="400"
-                height="300"
-                src="https://images.unsplash.com/photo-1734004691776-d7f04732c174?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Blog Post Title 1</h3>
-                <p className="text-gray-700 mb-4">
-                  A brief description of the blog post content goes here. It
-                  should be engaging and informative.
-                </p>
-                <a className="text-blue-500 hover:underline" href="#">
-                  Read more
-                </a>
+      <main className="container mx-auto px-4 py-16">
+        {/* Hero Section */}
+        <section className="relative bg-muted py-16 md:py-24">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            {/* Left Text Content */}
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                Discover the Latest in <br />
+                <span className="text-blue-600">MERN Stack</span> Development
+              </h1>
+              <p className="text-gray-600 mt-4 text-lg">
+                Join our community of developers sharing knowledge, best
+                practices, and insights on MongoDB, Express, React, and Node.js.
+              </p>
+              <div className="mt-6 flex gap-4 flex-wrap">
+                <Link
+                  to="#"
+                  className="bg-black text-white px-5 py-2 rounded-md text-sm"
+                >
+                  Explore Blogs
+                </Link>
+                <Link
+                  to="#"
+                  className="bg-white border border-gray-300 text-gray-800 px-5 py-2 rounded-md text-sm"
+                >
+                  About Us
+                </Link>
               </div>
             </div>
 
-            {/* Blog Card 2 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            {/* Right Side Featured Blog */}
+            <div className="relative rounded-md overflow-hidden shadow-lg">
               <img
-                alt="Image of a bustling cityscape at night"
-                className="w-full h-48 object-cover"
-                width="400"
-                height="300"
-                src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-LmQ09WWGIGwOeeA4ArnRw0x5/user-uJPET5fjNenSso8wCETWVNOp/img-oZIGHc1AuLEHklMMahwp7QNd.png?st=2025-04-16T03%3A08%3A58Z&amp;se=2025-04-16T05%3A08%3A58Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=cc612491-d948-4d2e-9821-2683df3719f5&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2025-04-15T04%3A53%3A12Z&amp;ske=2025-04-16T04%3A53%3A12Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=9oNJ4CuE6dz4wT7zUUlx8P7OMHAbT8AGwN4OHig2cK4%3D"
+                src="https://www.frontendmag.com/wp-content/uploads/2022/12/how-to-learn-react-js-quickly.jpeg"
+                alt="react"
+                className="h-full w-full object-cover"
               />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Blog Post Title 2</h3>
-                <p className="text-gray-700 mb-4">
-                  A brief description of the blog post content goes here. It
-                  should be engaging and informative.
-                </p>
-                <a className="text-blue-500 hover:underline" href="#">
-                  Read more
-                </a>
-              </div>
-            </div>
-
-            {/* Blog Card 3 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img
-                alt="Image of a serene beach with crystal clear water"
-                className="w-full h-48 object-cover"
-                width="400"
-                height="300"
-                src="https://images.unsplash.com/photo-1741851374674-e4b7e573a9e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Blog Post Title 3</h3>
-                <p className="text-gray-700 mb-4">
-                  A brief description of the blog post content goes here. It
-                  should be engaging and informative.
-                </p>
-                <a className="text-blue-500 hover:underline" href="#">
-                  Read more
-                </a>
+              {/* Overlay Content */}
+              <div className="absolute inset-0 bg-black bg-opacity-40 p-6 flex flex-col justify-end">
+                <div>
+                  <h3 className="text-white text-xl font-semibold">
+                    Building Scalable React Applications: Best Practices
+                  </h3>
+                  <p className="text-gray-200 text-sm mt-2">
+                    Learn the essential patterns and practices for creating
+                    React applications that can grow without becoming
+                    unmanageable.
+                  </p>
+                  <div className="flex items-center mt-4 text-gray-300 text-sm">
+                    <img
+                      src="https://i.pravatar.cc/40?img=1"
+                      alt="Jane Cooper"
+                      className="w-6 h-6 rounded-full mr-2"
+                    />
+                    Jane Cooper · Senior Developer
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* top 3 authors  */}
-        <section>
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-3xl font-bold">Top Authors</h2>
-            <a
-              href="#"
-              className="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors duration-300"
-            >
-              See All
-            </a>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Author 1 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden text-center p-6">
-              <img
-                alt="Portrait of Author 1"
-                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                width="150"
-                height="150"
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww"
-              />
-              <h3 className="text-xl font-bold mb-2">Author 1</h3>
-              <p className="text-gray-700 mb-4">
-                A brief bio of the author goes here. It should highlight their
-                expertise and experience.
-              </p>
-              <a href="#" className="text-blue-500 hover:underline">
-                View Profile
-              </a>
+        <section className="py-16">
+          <div className="mx-auto">
+            <div className="flex justify-between items-center mb-10">
+              <h2 className="text-3xl font-bold text-gray-800">
+                Top-Rated Articles
+              </h2>
+              <Link
+                to="#"
+                className="bg-blue-500 text-white py-2 px-4 rounded hover:underline flex items-center gap-1 text-sm"
+              >
+                View All
+              </Link>
             </div>
 
-            {/* Author 2 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden text-center p-6">
-              <img
-                alt="Portrait of Author 2"
-                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                width="150"
-                height="150"
-                src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww"
-              />
-              <h3 className="text-xl font-bold mb-2">Author 2</h3>
-              <p className="text-gray-700 mb-4">
-                A brief bio of the author goes here. It should highlight their
-                expertise and experience.
-              </p>
-              <a href="#" className="text-blue-500 hover:underline">
-                View Profile
-              </a>
-            </div>
-
-            {/* Author 3 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden text-center p-6">
-              <img
-                alt="Portrait of Author 3"
-                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                width="150"
-                height="150"
-                src="https://plus.unsplash.com/premium_photo-1690086519096-0594592709d3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fHJhbmRvbSUyMHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D"
-              />
-              <h3 className="text-xl font-bold mb-2">Author 3</h3>
-              <p className="text-gray-700 mb-4">
-                A brief bio of the author goes here. It should highlight their
-                expertise and experience.
-              </p>
-              <a href="#" className="text-blue-500 hover:underline">
-                View Profile
-              </a>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {articles.map((article) => (
+                <div
+                  key={article.id}
+                  className="bg-white rounded-lg shadow hover:shadow-lg transition duration-300"
+                >
+                  <div className="relative">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-48 object-cover rounded-t-lg"
+                    />
+                    <span className="absolute top-2 left-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
+                      {article.category}
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {article.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-3">
+                      {article.description.length > 120
+                        ? article.description.slice(0, 120) + "..."
+                        : article.description}
+                    </p>
+                    <div className="flex items-center text-sm text-gray-500 space-x-4 mb-4">
+                      <span>📅 {article.date}</span>
+                      <span>⏱ {article.time}</span>
+                      <span>❤️ {article.likes}</span>
+                      <span>💬 {article.comments}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <img
+                        src={article.author.avatar}
+                        alt={article.author.name}
+                        className="w-9 h-9 rounded-full"
+                      />
+                      <div>
+                        <p className="text-sm font-semibold text-gray-800">
+                          {article.author.name}
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          {article.author.role}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -179,7 +197,7 @@ const App = () => {
 
       {/* footer section  */}
       <Footer />
-    </>
+    </div>
   );
 };
 
