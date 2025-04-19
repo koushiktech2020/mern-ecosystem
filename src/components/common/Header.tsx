@@ -6,7 +6,7 @@ const Header = () => {
     <header className="bg-white shadow-md">
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         <Link to="#" className="text-2xl font-bold text-gray-800">
-          <span className="text-blue-600">MERN</span>Blogs
+          <span className="text-blue-600 me-1">MERN</span>Ecosystem
         </Link>
 
         {/* Desktop Menu */}
