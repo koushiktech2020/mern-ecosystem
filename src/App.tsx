@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { buttonVariants, Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -168,7 +168,7 @@ const App = () => {
       fullname: "John Doe",
       email: "john.doe@example.com",
       about: "Software engineer with 5 years of experience in web development.",
-      imageurl: "https://via.placeholder.com/200x200?text=John+Doe",
+      imageurl: "https://randomuser.me/api/portraits/men/10.jpg",
     },
     {
       id: 2,
@@ -176,14 +176,14 @@ const App = () => {
       email: "jane.smith@example.com",
       about:
         "Graphic designer and digital artist passionate about creating stunning visuals.",
-      imageurl: "https://via.placeholder.com/200x200?text=Jane+Smith",
+      imageurl: "https://randomuser.me/api/portraits/women/10.jpg",
     },
     {
       id: 3,
       fullname: "Alice Johnson",
       email: "alice.johnson@example.com",
       about: "Marketing specialist with a knack for social media strategy.",
-      imageurl: "https://via.placeholder.com/200x200?text=Alice+Johnson",
+      imageurl: "https://randomuser.me/api/portraits/women/11.jpg",
     },
     {
       id: 4,
@@ -191,7 +191,7 @@ const App = () => {
       email: "bob.brown@example.com",
       about:
         "Data analyst with expertise in statistical modeling and data visualization.",
-      imageurl: "https://via.placeholder.com/200x200?text=Bob+Brown",
+      imageurl: "https://randomuser.me/api/portraits/men/11.jpg",
     },
     {
       id: 5,
@@ -199,7 +199,7 @@ const App = () => {
       email: "charlie.davis@example.com",
       about:
         "Project manager with a focus on agile methodologies and team leadership.",
-      imageurl: "https://via.placeholder.com/200x200?text=Charlie+Davis",
+      imageurl: "https://randomuser.me/api/portraits/men/12.jpg",
     },
     {
       id: 6,
@@ -207,14 +207,14 @@ const App = () => {
       email: "diana.evans@example.com",
       about:
         "Content writer with a passion for storytelling and creative writing.",
-      imageurl: "https://via.placeholder.com/200x200?text=Diana+Evans",
+      imageurl: "https://randomuser.me/api/portraits/women/12.jpg",
     },
     {
       id: 7,
       fullname: "Ethan Harris",
       email: "ethan.harris@example.com",
       about: "Web developer skilled in JavaScript, HTML, and CSS.",
-      imageurl: "https://via.placeholder.com/200x200?text=Ethan+Harris",
+      imageurl: "https://randomuser.me/api/portraits/men/13.jpg",
     },
     {
       id: 8,
@@ -222,7 +222,7 @@ const App = () => {
       email: "fiona.green@example.com",
       about:
         "UX/UI designer dedicated to improving user experience through design.",
-      imageurl: "https://via.placeholder.com/200x200?text=Fiona+Green",
+      imageurl: "https://randomuser.me/api/portraits/women/13.jpg",
     },
     {
       id: 9,
@@ -230,7 +230,7 @@ const App = () => {
       email: "george.king@example.com",
       about:
         "Cybersecurity expert with a focus on network security and risk management.",
-      imageurl: "https://via.placeholder.com/200x200?text=George+King",
+      imageurl: "https://randomuser.me/api/portraits/men/14.jpg",
     },
     {
       id: 10,
@@ -238,7 +238,7 @@ const App = () => {
       email: "hannah.lee@example.com",
       about:
         "Product manager with experience in launching successful tech products.",
-      imageurl: "https://via.placeholder.com/200x200?text=Hannah+Lee",
+      imageurl: "https://randomuser.me/api/portraits/women/14.jpg",
     },
   ];
 
@@ -263,22 +263,15 @@ const App = () => {
                   Node.js.
                 </p>
                 <div className="mt-6 flex gap-4 flex-wrap">
-                  <Link
-                    to="#"
-                    className={`${buttonVariants({
-                      variant: "default",
-                    })}`}
+                  <Button
+                    asChild
+                    className="bg-blue-600 text-white hover:bg-blue-700"
                   >
-                    Explore Blogs
-                  </Link>
-                  <Link
-                    to="#"
-                    className={`${buttonVariants({
-                      variant: "outline",
-                    })}`}
-                  >
-                    About Us
-                  </Link>
+                    <Link to="#">Explore Blogs</Link>
+                  </Button>
+                  <Button asChild variant="outline">
+                    <Link to="#"> About Us</Link>
+                  </Button>
                 </div>
               </div>
 
@@ -290,7 +283,7 @@ const App = () => {
                   className="h-full w-full object-cover"
                 />
                 {/* Overlay Content */}
-                <div className="absolute inset-0 bg-black opacity-80 p-6 flex flex-col justify-end">
+                <div className="absolute inset-0 bg-black opacity-75 p-6 flex flex-col justify-end">
                   <div>
                     <h3 className="text-white text-xl font-semibold">
                       Building Scalable React Applications: Best Practices
@@ -319,9 +312,7 @@ const App = () => {
         <section className="py-16 bg-white">
           <div className="mx-auto container px-6">
             <div className="flex justify-between items-center mb-10">
-              <h2 className="text-3xl font-bold text-gray-800">
-                Top-Rated Experts
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-800">Top Experts</h2>
               <Link
                 to="#"
                 className="bg-blue-500 text-white py-2 px-4 rounded flex items-center gap-1 text-sm"
@@ -340,7 +331,7 @@ const App = () => {
                 {userRecords.map((user, index) => (
                   <CarouselItem
                     key={index}
-                    className="basis-full md:basis-1/2 lg:basis-1/3 flex"
+                    className="basis-full md:basis-1/2 lg:basis-1/4 flex"
                   >
                     <Card className="rounded-lg shadow hover:shadow-lg transition duration-300 w-full">
                       <CardContent className="p-6 flex flex-col items-center text-center gap-4">
@@ -349,31 +340,33 @@ const App = () => {
                             alt="Smiling woman with dark hair wearing a red top, circular portrait"
                             className="rounded-full object-cover"
                             height="150"
-                            src="https://randomuser.me/api/portraits/men/35.jpg"
+                            // src="https://randomuser.me/api/portraits/men/35.jpg"
+                            src={user.imageurl}
                             width="150"
                           />
                         </div>
 
-                        <div>
+                        <div className="flex flex-col gap-2">
                           <Link to="#">
-                            <h3 className="text-lg font-medium">
+                            <h3 className="text-lg font-semibold text-gray-900">
                               {user.fullname}
                             </h3>
                           </Link>
-                          <p className="text-sm text-muted-foreground">
-                            @{user.email}
+                          <p className="text-sm text-muted-foreground italic">
+                            @ {user.email}
+                          </p>
+                          <p className="text-gray-500 text-xs leading-4">
+                            Senior Developer
                           </p>
                         </div>
 
-                        <p className="text-[#7a7a7a] text-xs leading-4 mb-2">
-                          Senior Developer
-                        </p>
+                        <p className="text-sm text-gray-600">{user.about}</p>
 
-                        <p className="text-sm text-muted-foreground ">
-                          {user.about}
-                        </p>
-
-                        <Button variant="outline" size="lg" className="w-full">
+                        <Button
+                          variant="outline"
+                          size="lg"
+                          className="w-full bg-blue-500 hover:bg-blue-600 text-white hover:text-white"
+                        >
                           Details
                         </Button>
                       </CardContent>
@@ -387,37 +380,12 @@ const App = () => {
           </div>
         </section>
 
-        {/* contact us  */}
-        <section className="rounded-2xl bg-indigo-100 p-8 md:p-10">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-medium mb-4">Stay in the loop</h2>
-            <p className="text-muted-foreground mb-6">
-              Get the latest articles and insights delivered straight to your
-              inbox.
-            </p>
-            <div className="flex max-w-md mx-auto gap-2 items-center">
-              <Input
-                type="email"
-                placeholder="Email"
-                className="bg-background"
-              />
-
-              <Button
-                type="button"
-                className="bg-blue-600 hover:bg-blue-700 transition-colors"
-              >
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </section>
-
         {/* blog list  */}
         <section className="py-16 bg-white">
           <div className="mx-auto container px-6">
             <div className="flex justify-between items-center mb-10">
               <h2 className="text-3xl font-bold text-gray-800">
-                Top-Rated Articles
+                Best Articles
               </h2>
               <Link
                 to="#"
@@ -457,10 +425,10 @@ const App = () => {
                           </div> */}
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
+                          <span className="border border-blue-600 text-blue-600 text-xs font-medium p-2 rounded transition transition-duration-1500 ease-in-out hover:border-transparent hover:bg-blue-600 hover:text-white">
                             {article.category}
                           </span>
-                          <span className="bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
+                          <span className="border border-blue-600 text-blue-600 text-xs font-medium p-2 rounded transition transition-duration-1500 ease-in-out hover:border-transparent hover:bg-blue-600 hover:text-white">
                             {article.category}
                           </span>
                         </div>
@@ -612,6 +580,31 @@ const App = () => {
                 </div>
               ))}
             </div> */}
+          </div>
+        </section>
+
+        {/* contact us  */}
+        <section className="rounded-2xl bg-indigo-100 p-8 md:p-10">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-2xl font-medium mb-4">Stay with us</h2>
+            <p className="text-muted-foreground mb-6">
+              Get the latest articles and insights delivered straight to your
+              inbox.
+            </p>
+            <div className="flex max-w-md mx-auto gap-2 items-center">
+              <Input
+                type="email"
+                placeholder="Email"
+                className="bg-background"
+              />
+
+              <Button
+                type="button"
+                className="bg-blue-600 hover:bg-blue-700 transition-colors"
+              >
+                Subscribe
+              </Button>
+            </div>
           </div>
         </section>
       </main>
