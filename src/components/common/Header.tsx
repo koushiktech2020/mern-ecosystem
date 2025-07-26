@@ -20,7 +20,7 @@ const Header = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-4 items-center">
           <Link
-            to="#"
+            to="/articles"
             className="text-sm transition-colors text-gray-500 font-semibold hover:text-blue-500"
           >
             Blogs
