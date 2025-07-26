@@ -159,83 +159,120 @@ const Home = () => {
     },
   ];
 
-  const userRecords = [
+  const authors = [
     {
       id: 1,
-      fullname: "John Doe",
-      email: "john.doe@example.com",
-      about: "Software engineer with 5 years of experience in web development.",
-      imageurl: "https://randomuser.me/api/portraits/men/10.jpg",
+      name: "Jane Cooper",
+      role: "Senior Frontend Developer",
+      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+      bio: "Passionate about React, TypeScript, and modern web development. Love sharing knowledge through writing and mentoring.",
+      location: "San Francisco, CA",
+      company: "TechCorp Inc.",
+      articlesCount: 24,
+      followers: 1250,
+      following: 180,
+      joinedDate: "Jan 2022",
+      specialties: ["React", "TypeScript", "Frontend Architecture"],
+      socialLinks: {
+        twitter: "@janecooper",
+        github: "janecooper",
+        linkedin: "jane-cooper-dev",
+      },
     },
     {
       id: 2,
-      fullname: "Jane Smith",
-      email: "jane.smith@example.com",
-      about:
-        "Graphic designer and digital artist passionate about creating stunning visuals.",
-      imageurl: "https://randomuser.me/api/portraits/women/10.jpg",
+      name: "Cody Fisher",
+      role: "Mobile Developer",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      bio: "Mobile app developer specializing in React Native and Flutter. Building cross-platform solutions for startups.",
+      location: "Austin, TX",
+      company: "MobileFirst Solutions",
+      articlesCount: 18,
+      followers: 890,
+      following: 145,
+      joinedDate: "Mar 2022",
+      specialties: ["React Native", "Flutter", "Mobile UX"],
+      socialLinks: {
+        twitter: "@codyfisher",
+        github: "codyfisher",
+        linkedin: "cody-fisher-mobile",
+      },
     },
     {
       id: 3,
-      fullname: "Alice Johnson",
-      email: "alice.johnson@example.com",
-      about: "Marketing specialist with a knack for social media strategy.",
-      imageurl: "https://randomuser.me/api/portraits/women/11.jpg",
+      name: "Esther Howard",
+      role: "Full Stack Engineer",
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      bio: "Full-stack developer with expertise in MERN stack. Passionate about scalable architecture and clean code.",
+      location: "New York, NY",
+      company: "DevStack Labs",
+      articlesCount: 31,
+      followers: 1680,
+      following: 220,
+      joinedDate: "Nov 2021",
+      specialties: ["Node.js", "MongoDB", "System Design"],
+      socialLinks: {
+        twitter: "@estherhoward",
+        github: "estherhoward",
+        linkedin: "esther-howard-fullstack",
+      },
     },
     {
       id: 4,
-      fullname: "Bob Brown",
-      email: "bob.brown@example.com",
-      about:
-        "Data analyst with expertise in statistical modeling and data visualization.",
-      imageurl: "https://randomuser.me/api/portraits/men/11.jpg",
+      name: "Ryan Thompson",
+      role: "Full Stack Developer",
+      avatar: "https://randomuser.me/api/portraits/men/43.jpg",
+      bio: "Experienced developer focused on building scalable web applications. Mentor and tech lead with 8+ years experience.",
+      location: "Seattle, WA",
+      company: "CloudTech Systems",
+      articlesCount: 42,
+      followers: 2100,
+      following: 310,
+      joinedDate: "Aug 2021",
+      specialties: ["AWS", "Docker", "Microservices"],
+      socialLinks: {
+        twitter: "@ryanthompson",
+        github: "ryanthompson",
+        linkedin: "ryan-thompson-dev",
+      },
     },
     {
       id: 5,
-      fullname: "Charlie Davis",
-      email: "charlie.davis@example.com",
-      about:
-        "Project manager with a focus on agile methodologies and team leadership.",
-      imageurl: "https://randomuser.me/api/portraits/men/12.jpg",
+      name: "Sophia Martinez",
+      role: "Frontend Developer",
+      avatar: "https://randomuser.me/api/portraits/women/45.jpg",
+      bio: "Creative frontend developer with a passion for UI/UX design. Specializing in modern JavaScript frameworks.",
+      location: "Los Angeles, CA",
+      company: "Design & Code Studio",
+      articlesCount: 19,
+      followers: 950,
+      following: 165,
+      joinedDate: "Feb 2022",
+      specialties: ["Vue.js", "CSS Animations", "UI/UX"],
+      socialLinks: {
+        twitter: "@sophiamartinez",
+        github: "sophiamartinez",
+        linkedin: "sophia-martinez-frontend",
+      },
     },
     {
       id: 6,
-      fullname: "Diana Evans",
-      email: "diana.evans@example.com",
-      about:
-        "Content writer with a passion for storytelling and creative writing.",
-      imageurl: "https://randomuser.me/api/portraits/women/12.jpg",
-    },
-    {
-      id: 7,
-      fullname: "Ethan Harris",
-      email: "ethan.harris@example.com",
-      about: "Web developer skilled in JavaScript, HTML, and CSS.",
-      imageurl: "https://randomuser.me/api/portraits/men/13.jpg",
-    },
-    {
-      id: 8,
-      fullname: "Fiona Green",
-      email: "fiona.green@example.com",
-      about:
-        "UX/UI designer dedicated to improving user experience through design.",
-      imageurl: "https://randomuser.me/api/portraits/women/13.jpg",
-    },
-    {
-      id: 9,
-      fullname: "George King",
-      email: "george.king@example.com",
-      about:
-        "Cybersecurity expert with a focus on network security and risk management.",
-      imageurl: "https://randomuser.me/api/portraits/men/14.jpg",
-    },
-    {
-      id: 10,
-      fullname: "Hannah Lee",
-      email: "hannah.lee@example.com",
-      about:
-        "Product manager with experience in launching successful tech products.",
-      imageurl: "https://randomuser.me/api/portraits/women/14.jpg",
+      name: "Michael Chen",
+      role: "Performance Engineer",
+      avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+      bio: "Performance optimization specialist. Helping teams build faster, more efficient web applications.",
+      location: "Portland, OR",
+      company: "SpeedTech Solutions",
+      articlesCount: 27,
+      followers: 1420,
+      following: 195,
+      joinedDate: "Dec 2021",
+      specialties: ["Performance", "Web Vitals", "Optimization"],
+      socialLinks: {
+        twitter: "@michaelchen",
+        github: "michaelchen",
+        linkedin: "michael-chen-performance",
+      },
     },
   ];
 
@@ -295,58 +332,193 @@ const Home = () => {
   return (
     <main className="flex-1">
       {/* Hero Section */}
-      <section className="bg-gray-100">
-        <div className="relative container mx-auto px-6 py-16 md:py-24">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Left Text Content */}
-            <div>
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-                Discover the Latest in <br />
-                <span className="text-blue-600">MERN Stack</span> Development
-              </h1>
-              <p className="text-gray-600 mt-4 text-lg">
-                Join our community of developers sharing knowledge, best
-                practices, and insights on MongoDB, Express, React, and Node.js.
-              </p>
-              <div className="mt-6 flex gap-4 flex-wrap">
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+
+        <div className="relative container mx-auto px-6 py-20 md:py-32">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              {/* Badge */}
+              <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
+                Welcome to MERN Ecosystem
+              </div>
+
+              {/* Main Heading */}
+              <div className="space-y-4">
+                <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
+                  Build Amazing
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                    Web Apps
+                  </span>
+                  <span className="block text-4xl md:text-5xl text-gray-700 font-medium">
+                    with MERN Stack
+                  </span>
+                </h1>
+
+                <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
+                  Join thousands of developers learning MongoDB, Express.js,
+                  React, and Node.js. Share knowledge, discover best practices,
+                  and build the future of web development.
+                </p>
+              </div>
+
+              {/* Stats */}
+              <div className="flex items-center space-x-8 text-sm text-gray-600">
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                    <span className="text-green-600 font-bold">✓</span>
+                  </div>
+                  <span>500+ Articles</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span className="text-blue-600 font-bold">👥</span>
+                  </div>
+                  <span>50+ Expert Authors</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                    <span className="text-purple-600 font-bold">🚀</span>
+                  </div>
+                  <span>10k+ Developers</span>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   asChild
-                  className="bg-blue-600 text-white hover:bg-blue-700"
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <Link to="#">Explore Blogs</Link>
+                  <Link to="/articles">
+                    <span>Explore Articles</span>
+                    <svg
+                      className="w-5 h-5 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  </Link>
                 </Button>
-                <Button asChild variant="outline">
-                  <Link to="#"> About Us</Link>
+
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-gray-300 hover:border-blue-500 hover:text-blue-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
+                >
+                  <Link to="/authors">
+                    <span>Meet Authors</span>
+                  </Link>
                 </Button>
+              </div>
+
+              {/* Tech Stack Icons */}
+              <div className="pt-8">
+                <p className="text-sm text-gray-500 mb-4">
+                  Powered by modern technologies:
+                </p>
+                <div className="flex items-center space-x-6">
+                  <div className="flex items-center space-x-2 text-green-600">
+                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center font-bold">
+                      M
+                    </div>
+                    <span className="text-sm font-medium">MongoDB</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-gray-700">
+                    <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center font-bold">
+                      E
+                    </div>
+                    <span className="text-sm font-medium">Express</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-blue-600">
+                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center font-bold">
+                      R
+                    </div>
+                    <span className="text-sm font-medium">React</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-green-500">
+                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center font-bold">
+                      N
+                    </div>
+                    <span className="text-sm font-medium">Node.js</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Right Side Featured Blog */}
-            <div className="relative rounded-md overflow-hidden shadow-lg">
-              <img
-                src="https://miro.medium.com/v2/resize:fit:680/1*RDN058L5gQ02Xy13OaxjnQ.jpeg"
-                alt="react"
-                className="h-full w-full object-cover"
-              />
-              {/* Overlay Content */}
-              <div className="absolute inset-0 bg-black opacity-75 p-6 flex flex-col justify-end">
-                <div>
-                  <h3 className="text-white text-xl font-semibold">
-                    Building Scalable React Applications: Best Practices
-                  </h3>
-                  <p className="text-gray-200 text-sm mt-2">
-                    Learn the essential patterns and practices for creating
-                    React applications that can grow without becoming
-                    unmanageable.
-                  </p>
-                  <div className="flex items-center mt-4 text-gray-300 text-sm">
+            {/* Right Content - Featured Content Grid */}
+            <div className="relative">
+              <div className="grid grid-cols-1 gap-6">
+                {/* Featured Article Card */}
+                <Card className="relative overflow-hidden bg-white shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="relative h-64">
                     <img
-                      src="https://i.pravatar.cc/40?img=1"
-                      alt="Jane Cooper"
-                      className="w-6 h-6 rounded-full mr-2"
+                      src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                      alt="Featured Article"
+                      className="w-full h-full object-cover"
                     />
-                    Jane Cooper · Senior Developer
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <span className="px-2 py-1 bg-blue-600 text-white text-xs font-medium rounded">
+                          Featured
+                        </span>
+                        <span className="px-2 py-1 bg-white/20 text-white text-xs rounded">
+                          React
+                        </span>
+                      </div>
+                      <h3 className="text-white text-lg font-bold mb-2">
+                        Building Scalable React Applications
+                      </h3>
+                      <div className="flex items-center text-white/80 text-sm">
+                        <img
+                          src="https://randomuser.me/api/portraits/women/44.jpg"
+                          alt="Jane Cooper"
+                          className="w-6 h-6 rounded-full mr-2"
+                        />
+                        <span>Jane Cooper • 5 min read</span>
+                      </div>
+                    </div>
                   </div>
+                </Card>
+
+                {/* Quick Stats Cards */}
+                <div className="grid grid-cols-2 gap-4">
+                  <Card className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-0 shadow-lg">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-blue-600 mb-1">
+                        24
+                      </div>
+                      <div className="text-sm text-gray-600">New Articles</div>
+                      <div className="text-xs text-gray-500">This Week</div>
+                    </div>
+                  </Card>
+
+                  <Card className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border-0 shadow-lg">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-green-600 mb-1">
+                        1.2k
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        Active Readers
+                      </div>
+                      <div className="text-xs text-gray-500">Online Now</div>
+                    </div>
+                  </Card>
                 </div>
               </div>
             </div>
@@ -354,13 +526,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* top experts  */}
+      {/* top authors  */}
       <section className="py-16 bg-white">
         <div className="mx-auto container px-6">
           <div className="flex justify-between items-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-800">Top Experts</h2>
+            <h2 className="text-3xl font-bold text-gray-800">Top Authors</h2>
             <Link
-              to="#"
+              to="/authors"
               className="bg-blue-500 text-white py-2 px-4 rounded flex items-center gap-1 text-sm"
             >
               View All
@@ -374,46 +546,71 @@ const Home = () => {
             }}
           >
             <CarouselContent>
-              {userRecords.map((user, index) => (
+              {authors.map((author, index) => (
                 <CarouselItem
                   key={index}
-                  className="basis-full md:basis-1/2 lg:basis-1/4 flex"
+                  className="basis-full md:basis-1/2 lg:basis-1/3 flex"
                 >
                   <Card className="rounded-lg shadow hover:shadow-lg transition duration-300 w-full">
                     <CardContent className="p-6 flex flex-col items-center text-center gap-4">
                       <div className="flex justify-center mb-6">
                         <img
-                          alt="Smiling woman with dark hair wearing a red top, circular portrait"
+                          alt={`${author.name} - ${author.role}`}
                           className="rounded-full object-cover"
                           height="150"
-                          // src="https://randomuser.me/api/portraits/men/35.jpg"
-                          src={user.imageurl}
+                          src={author.avatar}
                           width="150"
                         />
                       </div>
 
                       <div className="flex flex-col gap-2">
-                        <Link to="#">
+                        <Link to="/authors">
                           <h3 className="text-lg font-semibold text-gray-900">
-                            {user.fullname}
+                            {author.name}
                           </h3>
                         </Link>
                         <p className="text-sm text-muted-foreground italic">
-                          @ {user.email}
+                          {author.role}
                         </p>
                         <p className="text-gray-500 text-xs leading-4">
-                          Senior Developer
+                          {author.location}
                         </p>
                       </div>
 
-                      <p className="text-sm text-gray-600">{user.about}</p>
+                      <p className="text-sm text-gray-600 line-clamp-3">
+                        {author.bio}
+                      </p>
+
+                      {/* Stats */}
+                      <div className="flex justify-between text-xs text-gray-500 w-full">
+                        <span>{author.articlesCount} articles</span>
+                        <span>{author.followers} followers</span>
+                      </div>
+
+                      {/* Specialties */}
+                      <div className="flex flex-wrap gap-1 justify-center">
+                        {author.specialties.slice(0, 2).map((specialty) => (
+                          <span
+                            key={specialty}
+                            className="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded-md"
+                          >
+                            {specialty}
+                          </span>
+                        ))}
+                        {author.specialties.length > 2 && (
+                          <span className="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded-md">
+                            +{author.specialties.length - 2}
+                          </span>
+                        )}
+                      </div>
 
                       <Button
                         variant="outline"
                         size="lg"
                         className="w-full bg-blue-500 hover:bg-blue-600 text-white hover:text-white"
+                        asChild
                       >
-                        Details
+                        <Link to="/authors">View Profile</Link>
                       </Button>
                     </CardContent>
                   </Card>

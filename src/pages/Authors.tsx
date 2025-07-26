@@ -9,11 +9,10 @@ import {
   SheetTitle,
   SheetClose,
 } from "@/components/ui/sheet";
-
 import { Filter, X, ChevronDown, Check } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
-const Articles = () => {
+const Authors = () => {
   // State for multi-select
   const [selectedSortOptions, setSelectedSortOptions] = useState<string[]>([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -24,7 +23,7 @@ const Articles = () => {
     { value: "newest", label: "Newest First" },
     { value: "oldest", label: "Oldest First" },
     { value: "popular", label: "Most Popular" },
-    { value: "comments", label: "Most Comments" },
+    { value: "articles", label: "Most Articles" },
   ];
 
   // Handle clicking outside dropdown to close it
@@ -60,135 +59,140 @@ const Articles = () => {
     );
   };
 
-  const articles = [
+  const authors = [
     {
       id: 1,
-      title: "Building Scalable React Applications: Best Practices",
-      category: "Frontend",
-      image:
-        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-      description:
-        "Learn the essential patterns and practices for creating React applications that can grow without becoming unmanageable.",
-      date: "Jul 12, 2023",
-      time: "8 min read",
-      likes: 342,
-      comments: 3,
-      author: {
-        name: "Jane Cooper",
-        role: "Senior Developer",
-        avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+      name: "Jane Cooper",
+      role: "Senior Frontend Developer",
+      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+      bio: "Passionate about React, TypeScript, and modern web development. Love sharing knowledge through writing and mentoring.",
+      location: "San Francisco, CA",
+      company: "TechCorp Inc.",
+      articlesCount: 24,
+      followers: 1250,
+      following: 180,
+      joinedDate: "Jan 2022",
+      specialties: ["React", "TypeScript", "Frontend Architecture"],
+      socialLinks: {
+        twitter: "@janecooper",
+        github: "janecooper",
+        linkedin: "jane-cooper-dev",
       },
     },
     {
       id: 2,
-      title: "Introduction to TypeScript: Making JavaScript More Robust",
-      category: "TypeScript",
-      image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80",
-      description:
-        "Discover how TypeScript adds static typing to JavaScript, enhancing code quality and developer productivity.",
-      date: "Jun 15, 2023",
-      time: "9 min read",
-      likes: 302,
-      comments: 2,
-      author: {
-        name: "Cody Fisher",
-        role: "Mobile Developer",
-        avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      name: "Cody Fisher",
+      role: "Mobile Developer",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      bio: "Mobile app developer specializing in React Native and Flutter. Building cross-platform solutions for startups.",
+      location: "Austin, TX",
+      company: "MobileFirst Solutions",
+      articlesCount: 18,
+      followers: 890,
+      following: 145,
+      joinedDate: "Mar 2022",
+      specialties: ["React Native", "Flutter", "Mobile UX"],
+      socialLinks: {
+        twitter: "@codyfisher",
+        github: "codyfisher",
+        linkedin: "cody-fisher-mobile",
       },
     },
     {
       id: 3,
-      title: "Understanding Node.js Streams for Efficient Data Processing",
-      category: "Backend",
-      image:
-        "https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-      description:
-        "Dive into Node.js streams to handle large amounts of data efficiently without overwhelming your memory.",
-      date: "Jun 28, 2023",
-      time: "10 min read",
-      likes: 276,
-      comments: 2,
-      author: {
-        name: "Esther Howard",
-        role: "Full Stack Engineer",
-        avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      name: "Esther Howard",
+      role: "Full Stack Engineer",
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      bio: "Full-stack developer with expertise in MERN stack. Passionate about scalable architecture and clean code.",
+      location: "New York, NY",
+      company: "DevStack Labs",
+      articlesCount: 31,
+      followers: 1680,
+      following: 220,
+      joinedDate: "Nov 2021",
+      specialties: ["Node.js", "MongoDB", "System Design"],
+      socialLinks: {
+        twitter: "@estherhoward",
+        github: "estherhoward",
+        linkedin: "esther-howard-fullstack",
       },
     },
     {
       id: 4,
-      title: "Mastering Full Stack Development: A Comprehensive Guide",
-      category: "Full Stack",
-      image:
-        "https://images.unsplash.com/photo-1615228939092-9d3cdbb1c49d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-      description:
-        "Explore the essential skills and tools needed to become a proficient full stack developer in modern web development.",
-      date: "Jul 20, 2023",
-      time: "9 min read",
-      likes: 425,
-      comments: 5,
-      author: {
-        name: "Ryan Thompson",
-        role: "Full Stack Developer",
-        avatar: "https://randomuser.me/api/portraits/men/43.jpg",
+      name: "Ryan Thompson",
+      role: "Full Stack Developer",
+      avatar: "https://randomuser.me/api/portraits/men/43.jpg",
+      bio: "Experienced developer focused on building scalable web applications. Mentor and tech lead with 8+ years experience.",
+      location: "Seattle, WA",
+      company: "CloudTech Systems",
+      articlesCount: 42,
+      followers: 2100,
+      following: 310,
+      joinedDate: "Aug 2021",
+      specialties: ["AWS", "Docker", "Microservices"],
+      socialLinks: {
+        twitter: "@ryanthompson",
+        github: "ryanthompson",
+        linkedin: "ryan-thompson-dev",
       },
     },
     {
       id: 5,
-      title: "The Power of JavaScript Modules: Organizing Your Code",
-      category: "JavaScript",
-      image:
-        "https://images.unsplash.com/photo-1607988795691-3d0147b43231?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-      description:
-        "Learn how to use JavaScript modules to organize and structure your code more effectively for large-scale applications.",
-      date: "Jul 25, 2023",
-      time: "8 min read",
-      likes: 389,
-      comments: 4,
-      author: {
-        name: "Sophia Martinez",
-        role: "Frontend Developer",
-        avatar: "https://randomuser.me/api/portraits/women/45.jpg",
+      name: "Sophia Martinez",
+      role: "Frontend Developer",
+      avatar: "https://randomuser.me/api/portraits/women/45.jpg",
+      bio: "Creative frontend developer with a passion for UI/UX design. Specializing in modern JavaScript frameworks.",
+      location: "Los Angeles, CA",
+      company: "Design & Code Studio",
+      articlesCount: 19,
+      followers: 950,
+      following: 165,
+      joinedDate: "Feb 2022",
+      specialties: ["Vue.js", "CSS Animations", "UI/UX"],
+      socialLinks: {
+        twitter: "@sophiamartinez",
+        github: "sophiamartinez",
+        linkedin: "sophia-martinez-frontend",
       },
     },
     {
       id: 6,
-      title: "Optimizing Web Performance: Best Practices for Faster Websites",
-      category: "Performance",
-      image:
-        "https://images.unsplash.com/photo-1627386377705-4d10c6a2b3d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-      description:
-        "Discover proven strategies for optimizing web performance, including code optimization, image compression, and caching techniques.",
-      date: "Jul 18, 2023",
-      time: "10 min read",
-      likes: 367,
-      comments: 3,
-      author: {
-        name: "Michael Chen",
-        role: "Performance Engineer",
-        avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+      name: "Michael Chen",
+      role: "Performance Engineer",
+      avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+      bio: "Performance optimization specialist. Helping teams build faster, more efficient web applications.",
+      location: "Portland, OR",
+      company: "SpeedTech Solutions",
+      articlesCount: 27,
+      followers: 1420,
+      following: 195,
+      joinedDate: "Dec 2021",
+      specialties: ["Performance", "Web Vitals", "Optimization"],
+      socialLinks: {
+        twitter: "@michaelchen",
+        github: "michaelchen",
+        linkedin: "michael-chen-performance",
       },
     },
   ];
 
-  const categories = [
+  const roles = [
     "All",
-    "Frontend",
-    "Backend",
-    "Full Stack",
-    "TypeScript",
-    "JavaScript",
-    "Performance",
+    "Frontend Developer",
+    "Backend Developer",
+    "Full Stack Developer",
+    "Mobile Developer",
+    "Performance Engineer",
   ];
 
-  const authors = [
+  const locations = [
     "All",
-    "Jane Cooper",
-    "Cody Fisher",
-    "Esther Howard",
-    "Ryan Thompson",
-    "Sophia Martinez",
-    "Michael Chen",
+    "San Francisco, CA",
+    "Austin, TX",
+    "New York, NY",
+    "Seattle, WA",
+    "Los Angeles, CA",
+    "Portland, OR",
   ];
 
   return (
@@ -196,10 +200,10 @@ const Articles = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Articles</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Authors</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover the latest insights, tutorials, and best practices in web
-            development
+            Meet our talented community of developers and writers sharing their
+            expertise
           </p>
         </div>
 
@@ -208,7 +212,7 @@ const Articles = () => {
           <div className="relative flex-1">
             <Input
               type="text"
-              placeholder="Search articles..."
+              placeholder="Search authors..."
               className="pl-10 pr-4 py-2 w-full"
             />
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -244,9 +248,8 @@ const Articles = () => {
               <SheetHeader className="p-6 border-b bg-white">
                 <div className="flex items-center justify-between">
                   <SheetTitle className="text-xl font-semibold text-gray-900">
-                    Filter Articles
+                    Filter Authors
                   </SheetTitle>
-                  {/* This is your custom close button */}
                   <SheetClose asChild>
                     <Button
                       variant="ghost"
@@ -263,49 +266,49 @@ const Articles = () => {
               </SheetHeader>
 
               <div className="p-6 space-y-6">
-                {/* Category Filter */}
+                {/* Role Filter */}
                 <div>
                   <h3 className="text-sm font-medium text-gray-900 mb-3">
-                    Category
+                    Role
                   </h3>
                   <div className="space-y-2">
-                    {categories.map((category) => (
+                    {roles.map((role) => (
                       <label
-                        key={category}
+                        key={role}
                         className="flex items-center space-x-3 cursor-pointer"
                       >
                         <input
                           type="radio"
-                          name="category"
-                          value={category}
+                          name="role"
+                          value={role}
                           className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
                         />
-                        <span className="text-sm text-gray-700">
-                          {category}
-                        </span>
+                        <span className="text-sm text-gray-700">{role}</span>
                       </label>
                     ))}
                   </div>
                 </div>
 
-                {/* Author Filter */}
+                {/* Location Filter */}
                 <div>
                   <h3 className="text-sm font-medium text-gray-900 mb-3">
-                    Author
+                    Location
                   </h3>
                   <div className="space-y-2">
-                    {authors.map((author) => (
+                    {locations.map((location) => (
                       <label
-                        key={author}
+                        key={location}
                         className="flex items-center space-x-3 cursor-pointer"
                       >
                         <input
                           type="radio"
-                          name="author"
-                          value={author}
+                          name="location"
+                          value={location}
                           className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
                         />
-                        <span className="text-sm text-gray-700">{author}</span>
+                        <span className="text-sm text-gray-700">
+                          {location}
+                        </span>
                       </label>
                     ))}
                   </div>
@@ -400,24 +403,29 @@ const Articles = () => {
                   </div>
                 </div>
 
-                {/* Reading Time Filter */}
+                {/* Experience Level Filter */}
                 <div>
                   <h3 className="text-sm font-medium text-gray-900 mb-3">
-                    Reading Time
+                    Experience Level
                   </h3>
                   <div className="space-y-2">
-                    {["All", "< 5 min", "5-10 min", "> 10 min"].map((time) => (
+                    {[
+                      "All",
+                      "Junior (0-2 years)",
+                      "Mid-level (3-5 years)",
+                      "Senior (6+ years)",
+                    ].map((level) => (
                       <label
-                        key={time}
+                        key={level}
                         className="flex items-center space-x-3 cursor-pointer"
                       >
                         <input
                           type="radio"
-                          name="readingTime"
-                          value={time}
+                          name="experience"
+                          value={level}
                           className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
                         />
-                        <span className="text-sm text-gray-700">{time}</span>
+                        <span className="text-sm text-gray-700">{level}</span>
                       </label>
                     ))}
                   </div>
@@ -445,55 +453,71 @@ const Articles = () => {
           </Sheet>
         </div>
 
-        {/* Articles Grid */}
+        {/* Authors Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {articles.map((article) => (
+          {authors.map((author) => (
             <Card
-              key={article.id}
+              key={author.id}
               className="rounded-lg shadow hover:shadow-lg transition duration-300 w-full"
             >
               <CardContent className="flex flex-col gap-4">
-                <div className="relative">
+                {/* Author Header */}
+                <div className="flex items-center gap-4">
                   <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-50 object-cover rounded-lg"
+                    src={author.avatar}
+                    alt={author.name}
+                    className="w-16 h-16 rounded-full object-cover"
                   />
-                  {/* <div className="absolute top-2 left-2 flex items-center gap-2">
-                            <span className="bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
-                              {article.category}
-                            </span>
-                            <span className="bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
-                              {article.category}
-                            </span>
-                          </div> */}
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {author.name}
+                    </h3>
+                    <p className="text-sm text-gray-600">{author.role}</p>
+                    <p className="text-xs text-gray-500">{author.location}</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="border border-blue-600 text-blue-600 text-xs font-medium p-2 rounded transition transition-duration-1500 ease-in-out hover:border-transparent hover:bg-blue-600 hover:text-white">
-                    {article.category}
-                  </span>
-                  <span className="border border-blue-600 text-blue-600 text-xs font-medium p-2 rounded transition transition-duration-1500 ease-in-out hover:border-transparent hover:bg-blue-600 hover:text-white">
-                    {article.category}
-                  </span>
+
+                {/* Bio */}
+                <p className="text-sm text-gray-600 line-clamp-3">
+                  {author.bio}
+                </p>
+
+                {/* Stats */}
+                <div className="flex justify-between text-sm text-gray-500">
+                  <span>{author.articlesCount} articles</span>
+                  <span>{author.followers} followers</span>
+                  <span>Joined {author.joinedDate}</span>
                 </div>
-                <div className="py-5">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {article.title.length > 50
-                      ? article.title.slice(0, 50) + "..."
-                      : article.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    {article.description.length > 120
-                      ? article.description.slice(0, 120) + "..."
-                      : article.description}
-                  </p>
+
+                {/* Specialties */}
+                <div className="flex flex-wrap gap-1">
+                  {author.specialties.slice(0, 3).map((specialty) => (
+                    <span
+                      key={specialty}
+                      className="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded-md"
+                    >
+                      {specialty}
+                    </span>
+                  ))}
+                  {author.specialties.length > 3 && (
+                    <span className="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded-md">
+                      +{author.specialties.length - 3} more
+                    </span>
+                  )}
                 </div>
+
+                {/* Company */}
+                <div className="text-sm text-gray-600">
+                  <span className="font-medium">Company:</span> {author.company}
+                </div>
+
+                {/* Action Button */}
                 <Button
                   variant="default"
                   size="lg"
                   className="w-full bg-blue-500 hover:bg-blue-600"
                 >
-                  Details
+                  View Profile
                 </Button>
               </CardContent>
             </Card>
@@ -504,4 +528,4 @@ const Articles = () => {
   );
 };
 
-export default Articles;
+export default Authors;
