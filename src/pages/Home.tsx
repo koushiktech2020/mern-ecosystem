@@ -10,6 +10,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 
 const Home = () => {
   const articles = [
@@ -909,97 +911,142 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Us Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+      {/* Contact Us Section - Decent Type Get in Touch */}
+      <section className="bg-gradient-to-br from-slate-50 to-blue-50 py-16 px-4 min-h-screen">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Get In Touch
             </h2>
-            <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
-              We'd love to hear from you! Whether you have a question, feedback,
-              or just want to say hello, feel free to reach out.
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Have a question or want to work together? We'd love to hear from
+              you. Send us a message and we'll respond as soon as possible.
             </p>
-            <div className="mt-4 w-24 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto"></div>
           </div>
 
-          <div className="max-w-2xl mx-auto">
-            <Card className="bg-white shadow-2xl rounded-2xl border-gray-200">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Contact Form */}
+            <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300 h-full">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-gray-800 text-center">
-                  Send Us a Message
-                </CardTitle>
+                <div className="flex items-center">
+                  <MessageCircle className="text-blue-600 mr-3" size={28} />
+                  <CardTitle className="text-2xl">Send Message</CardTitle>
+                </div>
               </CardHeader>
-              <CardContent>
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <CardContent className="flex-1 flex flex-col">
+                <div className="space-y-6 flex-1">
+                  <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label
-                        htmlFor="name"
-                        className="font-medium text-gray-700"
-                      >
-                        Name
-                      </label>
+                      <Label htmlFor="name">Name</Label>
                       <Input
                         id="name"
-                        type="text"
-                        placeholder="Enter your name"
-                        className="bg-gray-100 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                        name="name"
+                        placeholder="John"
+                        className="transition-all duration-200 hover:border-gray-400"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label
-                        htmlFor="email"
-                        className="font-medium text-gray-700"
-                      >
-                        Email
-                      </label>
+                      <Label htmlFor="surname">Surname</Label>
                       <Input
-                        id="email"
-                        type="email"
-                        placeholder="Enter your email"
-                        className="bg-gray-100 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                        id="surname"
+                        name="surname"
+                        placeholder="Doe"
+                        className="transition-all duration-200 hover:border-gray-400"
                       />
                     </div>
                   </div>
+
                   <div className="space-y-2">
-                    <label
-                      htmlFor="subject"
-                      className="font-medium text-gray-700"
-                    >
-                      Subject
-                    </label>
+                    <Label htmlFor="email">Email Address</Label>
                     <Input
-                      id="subject"
-                      type="text"
-                      placeholder="What can we help you with?"
-                      className="bg-gray-100 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="john@example.com"
+                      className="transition-all duration-200 hover:border-gray-400"
                     />
                   </div>
+
                   <div className="space-y-2">
-                    <label
-                      htmlFor="message"
-                      className="font-medium text-gray-700"
-                    >
-                      Message
-                    </label>
+                    <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
-                      placeholder="Your message..."
-                      rows={5}
-                      className="bg-gray-100 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      name="message"
+                      placeholder="Tell us more about your inquiry..."
+                      className="transition-all duration-200 hover:border-gray-400 resize-none"
                     />
                   </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
+
+                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-200 group mt-auto">
+                    <Send
+                      className="mr-2 group-hover:translate-x-1 transition-transform duration-200"
+                      size={18}
+                    />
                     Send Message
                   </Button>
-                </form>
+                </div>
               </CardContent>
             </Card>
+
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300 h-full">
+                <CardHeader>
+                  <CardTitle className="text-2xl">
+                    Contact Information
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-6">
+                    <div className="flex items-start group cursor-pointer">
+                      <div className="bg-blue-100 p-3 rounded-lg mr-4 group-hover:bg-blue-200 transition-colors duration-200">
+                        <Mail className="text-blue-600" size={24} />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">
+                          Email
+                        </h4>
+                        <p className="text-gray-600">hello@company.com</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start group cursor-pointer">
+                      <div className="bg-green-100 p-3 rounded-lg mr-4 group-hover:bg-green-200 transition-colors duration-200">
+                        <Phone className="text-green-600" size={24} />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">
+                          Phone
+                        </h4>
+                        <p className="text-gray-600">+1 (555) 123-4567</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start group cursor-pointer">
+                      <div className="bg-purple-100 p-3 rounded-lg mr-4 group-hover:bg-purple-200 transition-colors duration-200">
+                        <MapPin className="text-purple-600" size={24} />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">
+                          Address
+                        </h4>
+                        <p className="text-gray-600">123 Business Street</p>
+                        <p className="text-gray-600">Suite 100</p>
+                        <p className="text-gray-600">City, State 12345</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p className="text-blue-800 text-sm">
+                      <strong>Response Time:</strong> We typically respond to
+                      inquiries within 24 hours during business days.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>

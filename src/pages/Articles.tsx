@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -67,11 +68,12 @@ const Articles = () => {
       title: "Building Scalable React Applications: Best Practices",
       category: "Frontend",
       image:
-        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Learn the essential patterns and practices for creating React applications that can grow without becoming unmanageable.",
       date: "Jul 12, 2023",
-      time: "8 min read",
+      readingTime: 8,
+      views: 1500,
       likes: 342,
       comments: 3,
       author: {
@@ -85,11 +87,12 @@ const Articles = () => {
       title: "Introduction to TypeScript: Making JavaScript More Robust",
       category: "TypeScript",
       image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80",
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
       description:
         "Discover how TypeScript adds static typing to JavaScript, enhancing code quality and developer productivity.",
       date: "Jun 15, 2023",
-      time: "9 min read",
+      readingTime: 9,
+      views: 1200,
       likes: 302,
       comments: 2,
       author: {
@@ -103,11 +106,12 @@ const Articles = () => {
       title: "Understanding Node.js Streams for Efficient Data Processing",
       category: "Backend",
       image:
-        "https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Dive into Node.js streams to handle large amounts of data efficiently without overwhelming your memory.",
       date: "Jun 28, 2023",
-      time: "10 min read",
+      readingTime: 10,
+      views: 1100,
       likes: 276,
       comments: 2,
       author: {
@@ -121,11 +125,12 @@ const Articles = () => {
       title: "Mastering Full Stack Development: A Comprehensive Guide",
       category: "Full Stack",
       image:
-        "https://images.unsplash.com/photo-1615228939092-9d3cdbb1c49d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1615228939092-9d3cdbb1c49d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Explore the essential skills and tools needed to become a proficient full stack developer in modern web development.",
       date: "Jul 20, 2023",
-      time: "9 min read",
+      readingTime: 9,
+      views: 1800,
       likes: 425,
       comments: 5,
       author: {
@@ -139,11 +144,12 @@ const Articles = () => {
       title: "The Power of JavaScript Modules: Organizing Your Code",
       category: "JavaScript",
       image:
-        "https://images.unsplash.com/photo-1607988795691-3d0147b43231?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1607988795691-3d0147b43231?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Learn how to use JavaScript modules to organize and structure your code more effectively for large-scale applications.",
       date: "Jul 25, 2023",
-      time: "8 min read",
+      readingTime: 8,
+      views: 1600,
       likes: 389,
       comments: 4,
       author: {
@@ -157,17 +163,56 @@ const Articles = () => {
       title: "Optimizing Web Performance: Best Practices for Faster Websites",
       category: "Performance",
       image:
-        "https://images.unsplash.com/photo-1627386377705-4d10c6a2b3d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1627386377705-4d10c6a2b3d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Discover proven strategies for optimizing web performance, including code optimization, image compression, and caching techniques.",
       date: "Jul 18, 2023",
-      time: "10 min read",
+      readingTime: 10,
+      views: 1400,
       likes: 367,
       comments: 3,
       author: {
         name: "Michael Chen",
         role: "Performance Engineer",
         avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+      },
+    },
+    {
+      id: 7,
+      title: "Securing Your Web Applications: Essential Security Practices",
+      category: "Security",
+      image:
+        "https://images.unsplash.com/photo-1618137277936-16181373c3b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      description:
+        "Learn how to protect your web applications from common security threats and vulnerabilities.",
+      date: "Jul 22, 2023",
+      readingTime: 9,
+      views: 2000,
+      likes: 456,
+      comments: 6,
+      author: {
+        name: "Emma Wilson",
+        role: "Security Specialist",
+        avatar: "https://randomuser.me/api/portraits/women/47.jpg",
+      },
+    },
+    {
+      id: 8,
+      title: "Career Growth in Tech: How to Advance as a Developer",
+      category: "Career Development",
+      image:
+        "https://images.unsplash.com/photo-1621503499045-7b6b9c6c4db4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      description:
+        "Get practical advice on advancing your career as a developer, including learning new skills, networking, and building a personal brand.",
+      date: "Jul 28, 2023",
+      readingTime: 10,
+      views: 1300,
+      likes: 298,
+      comments: 2,
+      author: {
+        name: "Oliver Brown",
+        role: "Tech Lead",
+        avatar: "https://randomuser.me/api/portraits/men/48.jpg",
       },
     },
   ];
@@ -452,52 +497,80 @@ const Articles = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.map((article) => (
             <Card
+              className="flex flex-col w-full bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 overflow-hidden group"
               key={article.id}
-              className="rounded-lg shadow hover:shadow-lg transition duration-300 w-full"
             >
-              <CardContent className="flex flex-col gap-4">
-                <div className="relative">
+              <div className="relative p-6 overflow-hidden">
+                <Link to="#" className="block">
                   <img
                     src={article.image}
                     alt={article.title}
-                    className="w-full h-50 object-cover rounded-lg"
+                    className="w-full h-48 object-cover rounded-lg"
                   />
-                  {/* <div className="absolute top-2 left-2 flex items-center gap-2">
-                            <span className="bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
-                              {article.category}
-                            </span>
-                            <span className="bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
-                              {article.category}
-                            </span>
-                          </div> */}
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="border border-blue-600 text-blue-600 text-xs font-medium p-2 rounded transition transition-duration-1500 ease-in-out hover:border-transparent hover:bg-blue-600 hover:text-white">
-                    {article.category}
-                  </span>
-                  <span className="border border-blue-600 text-blue-600 text-xs font-medium p-2 rounded transition transition-duration-1500 ease-in-out hover:border-transparent hover:bg-blue-600 hover:text-white">
+                </Link>
+                <div className="absolute top-8 left-8">
+                  <span className="bg-white/80 text-blue-800 text-xs font-bold px-3 py-1 rounded-full shadow-sm backdrop-blur-sm">
                     {article.category}
                   </span>
                 </div>
-                <div className="py-5">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {article.title.length > 50
-                      ? article.title.slice(0, 50) + "..."
-                      : article.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    {article.description.length > 120
-                      ? article.description.slice(0, 120) + "..."
-                      : article.description}
-                  </p>
+              </div>
+
+              <CardContent className="flex flex-col flex-grow p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+                  <Link to="#">{article.title}</Link>
+                </h3>
+                <p className="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">
+                  {article.description}
+                </p>
+
+                <div className="flex items-center justify-between text-xs text-gray-500 mt-auto pt-4 border-t border-gray-100">
+                  <div className="flex items-center gap-2">
+                    <img
+                      src={article.author.avatar}
+                      alt={article.author.name}
+                      className="w-8 h-8 rounded-full"
+                    />
+                    <div>
+                      <p className="font-semibold text-gray-700">
+                        {article.author.name}
+                      </p>
+                      <p>{article.date}</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-gray-500">{article.views} views</p>
+                    <div className="flex items-center gap-2 mt-1">
+                      <div className="flex items-center gap-1">
+                        <svg
+                          className="w-4 h-4 text-red-500"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <span>{article.likes}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <svg
+                          className="w-4 h-4 text-gray-500"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M18 10c0 3.866-3.582 7-8 7a8.837 8.837 0 01-4.486-1.283L2.77 17.77A1 1 0 012 16.236V6a4 4 0 014-4h8a4 4 0 014 4v4zM4.5 6.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm5 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <span>{article.comments}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <Button
-                  variant="default"
-                  size="lg"
-                  className="w-full bg-blue-500 hover:bg-blue-600"
-                >
-                  Details
-                </Button>
               </CardContent>
             </Card>
           ))}
