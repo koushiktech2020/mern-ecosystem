@@ -23,7 +23,6 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
       {/* Decorative top border */}
-      <div className="h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600"></div>
 
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-3"></div>
@@ -327,68 +326,6 @@ const Footer = () => {
                       hello@mernecosystem.com
                     </span>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats Section */}
-          <div className="border-t border-gray-300 mt-16 pt-12">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                Our Growing Community
-              </h3>
-              <p className="text-gray-600">
-                Join thousands of developers building the future
-              </p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center group">
-                <div className="bg-blue-50 rounded-2xl p-6 mb-4 group-hover:bg-blue-100 transition-colors">
-                  <div className="text-4xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform">
-                    500+
-                  </div>
-                  <div className="text-gray-600 font-medium">
-                    Articles Published
-                  </div>
-                  <div className="text-xs text-gray-500 mt-1">
-                    Growing daily
-                  </div>
-                </div>
-              </div>
-              <div className="text-center group">
-                <div className="bg-green-50 rounded-2xl p-6 mb-4 group-hover:bg-green-100 transition-colors">
-                  <div className="text-4xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform">
-                    50+
-                  </div>
-                  <div className="text-gray-600 font-medium">
-                    Expert Authors
-                  </div>
-                  <div className="text-xs text-gray-500 mt-1">
-                    Industry leaders
-                  </div>
-                </div>
-              </div>
-              <div className="text-center group">
-                <div className="bg-purple-50 rounded-2xl p-6 mb-4 group-hover:bg-purple-100 transition-colors">
-                  <div className="text-4xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform">
-                    10k+
-                  </div>
-                  <div className="text-gray-600 font-medium">
-                    Active Developers
-                  </div>
-                  <div className="text-xs text-gray-500 mt-1">Worldwide</div>
-                </div>
-              </div>
-              <div className="text-center group">
-                <div className="bg-orange-50 rounded-2xl p-6 mb-4 group-hover:bg-orange-100 transition-colors">
-                  <div className="text-4xl font-bold text-orange-600 mb-2 group-hover:scale-110 transition-transform">
-                    25k+
-                  </div>
-                  <div className="text-gray-600 font-medium">
-                    Monthly Readers
-                  </div>
-                  <div className="text-xs text-gray-500 mt-1">And counting</div>
                 </div>
               </div>
             </div>

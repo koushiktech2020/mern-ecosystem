@@ -60,6 +60,7 @@ const Articles = () => {
     );
   };
 
+  // Sample data
   const articles = [
     {
       id: 1,
@@ -171,6 +172,7 @@ const Articles = () => {
     },
   ];
 
+  // Filter options for category
   const categories = [
     "All",
     "Frontend",
@@ -181,6 +183,7 @@ const Articles = () => {
     "Performance",
   ];
 
+  // Filter options for author
   const authors = [
     "All",
     "Jane Cooper",

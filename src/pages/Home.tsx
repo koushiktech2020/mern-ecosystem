@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -10,6 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Textarea } from "@/components/ui/textarea";
 
 const Home = () => {
   const articles = [
@@ -282,8 +282,7 @@ const Home = () => {
       title: "MERN Stack Conference 2024",
       category: "Conference",
       location: "San Francisco, CA",
-      image:
-        "https://images.unsplash.com/photo-1523580494863-6f30330b2b02?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      image: "https://agumentikeducamp.com/assets/images/course/DSC_3580.webp",
       description:
         "Join leading experts and developers for a deep dive into the MERN stack. Featuring workshops, keynotes, and networking opportunities.",
     },
@@ -526,13 +525,15 @@ const Home = () => {
         </div>
       </section>
 
-      {/* top authors  */}
+      {/* ============== START: Updated Top Authors Section ============== */}
       <section className="py-16 bg-white">
         <div className="mx-auto container px-6">
           <div className="flex justify-between items-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-800">Top Authors</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+              Meet Our Top Authors
+            </h2>
             <Link
-              to="/authors"
+              to="#"
               className="bg-blue-500 text-white py-2 px-4 rounded flex items-center gap-1 text-sm"
             >
               View All
@@ -545,74 +546,77 @@ const Home = () => {
               loop: true,
             }}
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-4">
               {authors.map((author, index) => (
                 <CarouselItem
                   key={index}
-                  className="basis-full md:basis-1/2 lg:basis-1/3 flex"
+                  className="basis-full md:basis-1/2 lg:basis-1/3 pl-4"
                 >
-                  <Card className="rounded-lg shadow hover:shadow-lg transition duration-300 w-full">
-                    <CardContent className="p-6 flex flex-col items-center text-center gap-4">
-                      <div className="flex justify-center mb-6">
-                        <img
-                          alt={`${author.name} - ${author.role}`}
-                          className="rounded-full object-cover"
-                          height="150"
-                          src={author.avatar}
-                          width="150"
-                        />
+                  <Card className="w-full bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 overflow-hidden group">
+                    {/* Card Header with background */}
+                    <div className="relative h-25 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+                      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+                    </div>
+
+                    {/* Card Content */}
+                    <CardContent className="p-6 text-center">
+                      {/* Avatar positioned on top of the header */}
+                      <div className="relative flex justify-center -mt-20">
+                        <div className="relative">
+                          <img
+                            alt={author.name}
+                            className="rounded-full object-cover w-28 h-28 border-4 border-white shadow-md group-hover:border-blue-200 transition-colors"
+                            src={author.avatar}
+                          />
+                          <span className="absolute bottom-1 right-1 flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-xs font-bold ring-2 ring-white shadow">
+                            {author.articlesCount}
+                          </span>
+                        </div>
                       </div>
 
-                      <div className="flex flex-col gap-2">
-                        <Link to="/authors">
-                          <h3 className="text-lg font-semibold text-gray-900">
-                            {author.name}
-                          </h3>
-                        </Link>
-                        <p className="text-sm text-muted-foreground italic">
+                      {/* Author Info */}
+                      <div className="mt-4">
+                        <h3 className="text-xl font-bold text-gray-800">
+                          {author.name}
+                        </h3>
+                        <p className="text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                           {author.role}
                         </p>
-                        <p className="text-gray-500 text-xs leading-4">
-                          {author.location}
-                        </p>
                       </div>
 
-                      <p className="text-sm text-gray-600 line-clamp-3">
+                      {/* Bio */}
+                      <p className="text-sm text-gray-600 mt-3 leading-relaxed line-clamp-2">
                         {author.bio}
                       </p>
 
-                      {/* Stats */}
-                      <div className="flex justify-between text-xs text-gray-500 w-full">
-                        <span>{author.articlesCount} articles</span>
-                        <span>{author.followers} followers</span>
-                      </div>
-
                       {/* Specialties */}
-                      <div className="flex flex-wrap gap-1 justify-center">
-                        {author.specialties.slice(0, 2).map((specialty) => (
-                          <span
-                            key={specialty}
-                            className="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded-md"
-                          >
-                            {specialty}
-                          </span>
-                        ))}
-                        {author.specialties.length > 2 && (
-                          <span className="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded-md">
-                            +{author.specialties.length - 2}
-                          </span>
-                        )}
+                      <div className="mt-5">
+                        <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                          Specialties
+                        </h4>
+                        <div className="flex flex-wrap gap-2 justify-center">
+                          {author.specialties.slice(0, 3).map((specialty) => (
+                            <span
+                              key={specialty}
+                              className="px-3 py-1 text-xs font-medium text-blue-800 bg-blue-100 rounded-full"
+                            >
+                              {specialty}
+                            </span>
+                          ))}
+                        </div>
                       </div>
+                    </CardContent>
 
+                    {/* Card Footer with Button */}
+                    <div className="p-6 pt-2">
                       <Button
-                        variant="outline"
-                        size="lg"
-                        className="w-full bg-blue-500 hover:bg-blue-600 text-white hover:text-white"
                         asChild
+                        size="lg"
+                        className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all"
                       >
                         <Link to="/authors">View Profile</Link>
                       </Button>
-                    </CardContent>
+                    </div>
                   </Card>
                 </CarouselItem>
               ))}
@@ -622,8 +626,9 @@ const Home = () => {
           </Carousel>
         </div>
       </section>
+      {/* ============== END: Updated Top Authors Section ============== */}
 
-      {/* Top Events */}
+      {/* ============== START: Updated Top Events Section ============== */}
       <section className="py-16 bg-white">
         <div className="mx-auto container px-6">
           <div className="flex justify-between items-center mb-10">
@@ -648,7 +653,7 @@ const Home = () => {
                   key={index}
                   className="basis-full md:basis-1/2 lg:basis-1/3 flex"
                 >
-                  <Card className="rounded-lg shadow hover:shadow-lg transition duration-300 w-full">
+                  <Card className="w-full bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 overflow-hidden group">
                     <CardContent className="flex flex-col gap-4">
                       <div className="relative">
                         <img
@@ -680,7 +685,7 @@ const Home = () => {
                       <Button
                         variant="default"
                         size="lg"
-                        className="w-full bg-blue-500 hover:bg-blue-600"
+                        className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all"
                       >
                         Details
                       </Button>
@@ -694,6 +699,7 @@ const Home = () => {
           </Carousel>
         </div>
       </section>
+      {/* ============== END: Updated Top Events Section ============== */}
 
       {/* blog list  */}
       <section className="py-16 bg-white">
@@ -720,7 +726,7 @@ const Home = () => {
                   key={index}
                   className="basis-full md:basis-1/2 lg:basis-1/3 flex"
                 >
-                  <Card className="rounded-lg shadow hover:shadow-lg transition duration-300 w-full">
+                  <Card className="w-full bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 overflow-hidden group  ">
                     <CardContent className="flex flex-col gap-4">
                       <div className="relative">
                         <img
@@ -728,14 +734,6 @@ const Home = () => {
                           alt={article.title}
                           className="w-full h-50 object-cover rounded-lg"
                         />
-                        {/* <div className="absolute top-2 left-2 flex items-center gap-2">
-                            <span className="bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
-                              {article.category}
-                            </span>
-                            <span className="bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
-                              {article.category}
-                            </span>
-                          </div> */}
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="border border-blue-600 text-blue-600 text-xs font-medium p-2 rounded transition transition-duration-1500 ease-in-out hover:border-transparent hover:bg-blue-600 hover:text-white">
@@ -760,7 +758,7 @@ const Home = () => {
                       <Button
                         variant="default"
                         size="lg"
-                        className="w-full bg-blue-500 hover:bg-blue-600"
+                        className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all"
                       >
                         Details
                       </Button>
@@ -775,23 +773,155 @@ const Home = () => {
         </div>
       </section>
 
-      {/* contact us  */}
-      <section className="rounded-2xl bg-indigo-100 p-8 md:p-10">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-2xl font-medium mb-4">Stay with us</h2>
-          <p className="text-muted-foreground mb-6">
-            Get the latest articles and insights delivered straight to your
-            inbox.
+      {/* Stats Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">
+            Our Growing Community
+          </h3>
+          <p className="text-gray-600">
+            Join thousands of developers building the future
           </p>
-          <div className="flex max-w-md mx-auto gap-2 items-center">
-            <Input type="email" placeholder="Email" className="bg-background" />
+        </div>
+        <div className="mx-auto container px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center group">
+              <div className="bg-blue-50 rounded-2xl p-6 mb-4 group-hover:bg-blue-100 transition-colors">
+                <div className="text-4xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform">
+                  500+
+                </div>
+                <div className="text-gray-600 font-medium">
+                  Articles Published
+                </div>
+                <div className="text-xs text-gray-500 mt-1">Growing daily</div>
+              </div>
+            </div>
+            <div className="text-center group">
+              <div className="bg-green-50 rounded-2xl p-6 mb-4 group-hover:bg-green-100 transition-colors">
+                <div className="text-4xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform">
+                  50+
+                </div>
+                <div className="text-gray-600 font-medium">Expert Authors</div>
+                <div className="text-xs text-gray-500 mt-1">
+                  Industry leaders
+                </div>
+              </div>
+            </div>
+            <div className="text-center group">
+              <div className="bg-purple-50 rounded-2xl p-6 mb-4 group-hover:bg-purple-100 transition-colors">
+                <div className="text-4xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform">
+                  10k+
+                </div>
+                <div className="text-gray-600 font-medium">
+                  Active Developers
+                </div>
+                <div className="text-xs text-gray-500 mt-1">Worldwide</div>
+              </div>
+            </div>
+            <div className="text-center group">
+              <div className="bg-orange-50 rounded-2xl p-6 mb-4 group-hover:bg-orange-100 transition-colors">
+                <div className="text-4xl font-bold text-orange-600 mb-2 group-hover:scale-110 transition-transform">
+                  25k+
+                </div>
+                <div className="text-gray-600 font-medium">Monthly Readers</div>
+                <div className="text-xs text-gray-500 mt-1">And counting</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <Button
-              type="button"
-              className="bg-blue-600 hover:bg-blue-700 transition-colors"
-            >
-              Subscribe
-            </Button>
+      {/* Contact Us Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Get In Touch
+            </h2>
+            <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+              We'd love to hear from you! Whether you have a question, feedback,
+              or just want to say hello, feel free to reach out.
+            </p>
+            <div className="mt-4 w-24 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto"></div>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <Card className="bg-white shadow-2xl rounded-2xl border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-gray-800 text-center">
+                  Send Us a Message
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="name"
+                        className="font-medium text-gray-700"
+                      >
+                        Name
+                      </label>
+                      <Input
+                        id="name"
+                        type="text"
+                        placeholder="Enter your name"
+                        className="bg-gray-100 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="email"
+                        className="font-medium text-gray-700"
+                      >
+                        Email
+                      </label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="Enter your email"
+                        className="bg-gray-100 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="subject"
+                      className="font-medium text-gray-700"
+                    >
+                      Subject
+                    </label>
+                    <Input
+                      id="subject"
+                      type="text"
+                      placeholder="What can we help you with?"
+                      className="bg-gray-100 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 py-3 px-4"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="message"
+                      className="font-medium text-gray-700"
+                    >
+                      Message
+                    </label>
+                    <Textarea
+                      id="message"
+                      placeholder="Your message..."
+                      rows={5}
+                      className="bg-gray-100 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    Send Message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
