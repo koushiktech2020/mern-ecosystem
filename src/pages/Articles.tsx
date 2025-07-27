@@ -68,7 +68,7 @@ const Articles = () => {
       title: "Building Scalable React Applications: Best Practices",
       category: "Frontend",
       image:
-        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Learn the essential patterns and practices for creating React applications that can grow without becoming unmanageable.",
       date: "Jul 12, 2023",
@@ -84,21 +84,21 @@ const Articles = () => {
     },
     {
       id: 2,
-      title: "Introduction to TypeScript: Making JavaScript More Robust",
-      category: "TypeScript",
+      title: "Career Growth in Tech: How to Advance as a Developer",
+      category: "Career Development",
       image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
       description:
-        "Discover how TypeScript adds static typing to JavaScript, enhancing code quality and developer productivity.",
-      date: "Jun 15, 2023",
-      readingTime: 9,
-      views: 1200,
-      likes: 302,
+        "Get practical advice on advancing your career as a developer, including learning new skills, networking, and building a personal brand.",
+      date: "Jul 28, 2023",
+      readingTime: 10,
+      views: 1300,
+      likes: 298,
       comments: 2,
       author: {
-        name: "Cody Fisher",
-        role: "Mobile Developer",
-        avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+        name: "Oliver Brown",
+        role: "Tech Lead",
+        avatar: "https://randomuser.me/api/portraits/men/48.jpg",
       },
     },
     {
@@ -106,7 +106,7 @@ const Articles = () => {
       title: "Understanding Node.js Streams for Efficient Data Processing",
       category: "Backend",
       image:
-        "https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?q=80&w=1500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Dive into Node.js streams to handle large amounts of data efficiently without overwhelming your memory.",
       date: "Jun 28, 2023",
@@ -125,7 +125,7 @@ const Articles = () => {
       title: "Mastering Full Stack Development: A Comprehensive Guide",
       category: "Full Stack",
       image:
-        "https://images.unsplash.com/photo-1615228939092-9d3cdbb1c49d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Explore the essential skills and tools needed to become a proficient full stack developer in modern web development.",
       date: "Jul 20, 2023",
@@ -144,7 +144,7 @@ const Articles = () => {
       title: "The Power of JavaScript Modules: Organizing Your Code",
       category: "JavaScript",
       image:
-        "https://images.unsplash.com/photo-1607988795691-3d0147b43231?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Learn how to use JavaScript modules to organize and structure your code more effectively for large-scale applications.",
       date: "Jul 25, 2023",
@@ -163,7 +163,7 @@ const Articles = () => {
       title: "Optimizing Web Performance: Best Practices for Faster Websites",
       category: "Performance",
       image:
-        "https://images.unsplash.com/photo-1627386377705-4d10c6a2b3d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Discover proven strategies for optimizing web performance, including code optimization, image compression, and caching techniques.",
       date: "Jul 18, 2023",
@@ -175,44 +175,6 @@ const Articles = () => {
         name: "Michael Chen",
         role: "Performance Engineer",
         avatar: "https://randomuser.me/api/portraits/men/46.jpg",
-      },
-    },
-    {
-      id: 7,
-      title: "Securing Your Web Applications: Essential Security Practices",
-      category: "Security",
-      image:
-        "https://images.unsplash.com/photo-1618137277936-16181373c3b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      description:
-        "Learn how to protect your web applications from common security threats and vulnerabilities.",
-      date: "Jul 22, 2023",
-      readingTime: 9,
-      views: 2000,
-      likes: 456,
-      comments: 6,
-      author: {
-        name: "Emma Wilson",
-        role: "Security Specialist",
-        avatar: "https://randomuser.me/api/portraits/women/47.jpg",
-      },
-    },
-    {
-      id: 8,
-      title: "Career Growth in Tech: How to Advance as a Developer",
-      category: "Career Development",
-      image:
-        "https://images.unsplash.com/photo-1621503499045-7b6b9c6c4db4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      description:
-        "Get practical advice on advancing your career as a developer, including learning new skills, networking, and building a personal brand.",
-      date: "Jul 28, 2023",
-      readingTime: 10,
-      views: 1300,
-      likes: 298,
-      comments: 2,
-      author: {
-        name: "Oliver Brown",
-        role: "Tech Lead",
-        avatar: "https://randomuser.me/api/portraits/men/48.jpg",
       },
     },
   ];

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -457,69 +458,73 @@ const Authors = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {authors.map((author) => (
             <Card
+              className="w-full bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 overflow-hidden group"
               key={author.id}
-              className="rounded-lg shadow hover:shadow-lg transition duration-300 w-full"
             >
-              <CardContent className="flex flex-col gap-4">
-                {/* Author Header */}
-                <div className="flex items-center gap-4">
-                  <img
-                    src={author.avatar}
-                    alt={author.name}
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      {author.name}
-                    </h3>
-                    <p className="text-sm text-gray-600">{author.role}</p>
-                    <p className="text-xs text-gray-500">{author.location}</p>
+              {/* Card Header with background */}
+              <div className="relative h-25 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+                <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+              </div>
+
+              {/* Card Content */}
+              <CardContent className="p-6 text-center">
+                {/* Avatar positioned on top of the header */}
+                <div className="relative flex justify-center -mt-20">
+                  <div className="relative">
+                    <img
+                      alt={author.name}
+                      className="rounded-full object-cover w-28 h-28 border-4 border-white shadow-md group-hover:border-blue-200 transition-colors"
+                      src={author.avatar}
+                    />
+                    <span className="absolute bottom-1 right-1 flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-xs font-bold ring-2 ring-white shadow">
+                      {author.articlesCount}
+                    </span>
                   </div>
                 </div>
 
+                {/* Author Info */}
+                <div className="mt-4">
+                  <h3 className="text-xl font-bold text-gray-800">
+                    {author.name}
+                  </h3>
+                  <p className="text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                    {author.role}
+                  </p>
+                </div>
+
                 {/* Bio */}
-                <p className="text-sm text-gray-600 line-clamp-3">
+                <p className="text-sm text-gray-600 mt-3 leading-relaxed line-clamp-2">
                   {author.bio}
                 </p>
 
-                {/* Stats */}
-                <div className="flex justify-between text-sm text-gray-500">
-                  <span>{author.articlesCount} articles</span>
-                  <span>{author.followers} followers</span>
-                  <span>Joined {author.joinedDate}</span>
-                </div>
-
                 {/* Specialties */}
-                <div className="flex flex-wrap gap-1">
-                  {author.specialties.slice(0, 3).map((specialty) => (
-                    <span
-                      key={specialty}
-                      className="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded-md"
-                    >
-                      {specialty}
-                    </span>
-                  ))}
-                  {author.specialties.length > 3 && (
-                    <span className="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded-md">
-                      +{author.specialties.length - 3} more
-                    </span>
-                  )}
+                <div className="mt-5">
+                  <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                    Specialties
+                  </h4>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {author.specialties.slice(0, 3).map((specialty) => (
+                      <span
+                        key={specialty}
+                        className="px-3 py-1 text-xs font-medium text-blue-800 bg-blue-100 rounded-full"
+                      >
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
-                {/* Company */}
-                <div className="text-sm text-gray-600">
-                  <span className="font-medium">Company:</span> {author.company}
-                </div>
-
-                {/* Action Button */}
-                <Button
-                  variant="default"
-                  size="lg"
-                  className="w-full bg-blue-500 hover:bg-blue-600"
-                >
-                  View Profile
-                </Button>
               </CardContent>
+
+              {/* Card Footer with Button */}
+              <div className="p-6 pt-2">
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all"
+                >
+                  <Link to="/authors">View Profile</Link>
+                </Button>
+              </div>
             </Card>
           ))}
         </div>
