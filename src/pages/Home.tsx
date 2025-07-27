@@ -11,16 +11,29 @@ import {
 } from "@/components/ui/carousel";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  MessageCircle,
+  Github,
+  Twitter,
+  Linkedin,
+  BookOpen,
+  Users,
+  MessageSquare,
+} from "lucide-react";
 
 const Home = () => {
+  // Sample data
   const articles = [
     {
       id: 1,
       title: "Building Scalable React Applications: Best Practices",
       category: "Frontend",
       image:
-        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Learn the essential patterns and practices for creating React applications that can grow without becoming unmanageable.",
       date: "Jul 12, 2023",
@@ -36,21 +49,21 @@ const Home = () => {
     },
     {
       id: 2,
-      title: "Introduction to TypeScript: Making JavaScript More Robust",
-      category: "TypeScript",
+      title: "Career Growth in Tech: How to Advance as a Developer",
+      category: "Career Development",
       image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
       description:
-        "Discover how TypeScript adds static typing to JavaScript, enhancing code quality and developer productivity.",
-      date: "Jun 15, 2023",
-      readingTime: 9,
-      views: 1200,
-      likes: 302,
+        "Get practical advice on advancing your career as a developer, including learning new skills, networking, and building a personal brand.",
+      date: "Jul 28, 2023",
+      readingTime: 10,
+      views: 1300,
+      likes: 298,
       comments: 2,
       author: {
-        name: "Cody Fisher",
-        role: "Mobile Developer",
-        avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+        name: "Oliver Brown",
+        role: "Tech Lead",
+        avatar: "https://randomuser.me/api/portraits/men/48.jpg",
       },
     },
     {
@@ -58,7 +71,7 @@ const Home = () => {
       title: "Understanding Node.js Streams for Efficient Data Processing",
       category: "Backend",
       image:
-        "https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?q=80&w=1500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Dive into Node.js streams to handle large amounts of data efficiently without overwhelming your memory.",
       date: "Jun 28, 2023",
@@ -77,7 +90,7 @@ const Home = () => {
       title: "Mastering Full Stack Development: A Comprehensive Guide",
       category: "Full Stack",
       image:
-        "https://images.unsplash.com/photo-1615228939092-9d3cdbb1c49d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Explore the essential skills and tools needed to become a proficient full stack developer in modern web development.",
       date: "Jul 20, 2023",
@@ -96,7 +109,7 @@ const Home = () => {
       title: "The Power of JavaScript Modules: Organizing Your Code",
       category: "JavaScript",
       image:
-        "https://images.unsplash.com/photo-1607988795691-3d0147b43231?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Learn how to use JavaScript modules to organize and structure your code more effectively for large-scale applications.",
       date: "Jul 25, 2023",
@@ -115,7 +128,7 @@ const Home = () => {
       title: "Optimizing Web Performance: Best Practices for Faster Websites",
       category: "Performance",
       image:
-        "https://images.unsplash.com/photo-1627386377705-4d10c6a2b3d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description:
         "Discover proven strategies for optimizing web performance, including code optimization, image compression, and caching techniques.",
       date: "Jul 18, 2023",
@@ -127,44 +140,6 @@ const Home = () => {
         name: "Michael Chen",
         role: "Performance Engineer",
         avatar: "https://randomuser.me/api/portraits/men/46.jpg",
-      },
-    },
-    {
-      id: 7,
-      title: "Securing Your Web Applications: Essential Security Practices",
-      category: "Security",
-      image:
-        "https://images.unsplash.com/photo-1618137277936-16181373c3b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      description:
-        "Learn how to protect your web applications from common security threats and vulnerabilities.",
-      date: "Jul 22, 2023",
-      readingTime: 9,
-      views: 2000,
-      likes: 456,
-      comments: 6,
-      author: {
-        name: "Emma Wilson",
-        role: "Security Specialist",
-        avatar: "https://randomuser.me/api/portraits/women/47.jpg",
-      },
-    },
-    {
-      id: 8,
-      title: "Career Growth in Tech: How to Advance as a Developer",
-      category: "Career Development",
-      image:
-        "https://images.unsplash.com/photo-1621503499045-7b6b9c6c4db4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      description:
-        "Get practical advice on advancing your career as a developer, including learning new skills, networking, and building a personal brand.",
-      date: "Jul 28, 2023",
-      readingTime: 10,
-      views: 1300,
-      likes: 298,
-      comments: 2,
-      author: {
-        name: "Oliver Brown",
-        role: "Tech Lead",
-        avatar: "https://randomuser.me/api/portraits/men/48.jpg",
       },
     },
   ];
@@ -1046,6 +1021,299 @@ const Home = () => {
                   </div>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Brand Section */}
+          <div className="lg:col-span-1 space-y-8">
+            <div className="space-y-6">
+              <div className="flex items-center space-x-4">
+                <div className="relative">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-xl">
+                    <span className="text-white font-bold text-2xl">M</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold leading-tight">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+                      MERN
+                    </span>
+                    <span className="text-gray-800 ml-2">Ecosystem</span>
+                  </h3>
+                  <p className="text-gray-500 text-sm font-medium">
+                    Developer Community Platform
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-gray-600 leading-relaxed text-lg">
+                Join thousands of developers mastering the MERN stack. Share
+                knowledge, discover cutting-edge practices, and build the future
+                of web development together.
+              </p>
+
+              {/* Key Features */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-sm text-gray-600">Expert Content</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <span className="text-sm text-gray-600">
+                    Active Community
+                  </span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <span className="text-sm text-gray-600">Latest Trends</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-sm text-gray-600">Free Resources</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="space-y-4">
+              <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
+                Connect With Us
+              </h4>
+              <div className="flex space-x-3">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="w-12 h-12 bg-gradient-to-br from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 text-white transition-all duration-300 rounded-xl shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  <Github className="w-5 h-5" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white transition-all duration-300 rounded-xl shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  <Twitter className="w-5 h-5" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white transition-all duration-300 rounded-xl shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white transition-all duration-300 rounded-xl shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  <Mail className="w-5 h-5" />
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="space-y-6">
+            <div>
+              <h4 className="text-lg font-bold mb-1 text-gray-800">
+                Quick Links
+              </h4>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
+            </div>
+            <ul className="space-y-4">
+              <li>
+                <Link
+                  to="/articles"
+                  className="flex items-center text-gray-600 hover:text-blue-600 transition-all duration-300 group hover:translate-x-1"
+                >
+                  <div className="w-8 h-8 bg-blue-50 group-hover:bg-blue-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <BookOpen className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <span className="font-medium">Articles & Tutorials</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/authors"
+                  className="flex items-center text-gray-600 hover:text-blue-600 transition-all duration-300 group hover:translate-x-1"
+                >
+                  <div className="w-8 h-8 bg-green-50 group-hover:bg-green-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <Users className="w-4 h-4 text-green-600" />
+                  </div>
+                  <span className="font-medium">Expert Authors</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="#"
+                  className="flex items-center text-gray-600 hover:text-blue-600 transition-all duration-300 group hover:translate-x-1"
+                >
+                  <div className="w-8 h-8 bg-purple-50 group-hover:bg-purple-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <MessageSquare className="w-4 h-4 text-purple-600" />
+                  </div>
+                  <span className="font-medium">Community</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="#"
+                  className="flex items-center text-gray-600 hover:text-blue-600 transition-all duration-300 group hover:translate-x-1"
+                >
+                  <div className="w-8 h-8 bg-orange-50 group-hover:bg-orange-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                  </div>
+                  <span className="font-medium">About Us</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="#"
+                  className="flex items-center text-gray-600 hover:text-blue-600 transition-all duration-300 group hover:translate-x-1"
+                >
+                  <div className="w-8 h-8 bg-red-50 group-hover:bg-red-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+                  </div>
+                  <span className="font-medium">Contact</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div className="space-y-6">
+            <div>
+              <h4 className="text-lg font-bold mb-1 text-gray-800">
+                Resources
+              </h4>
+              <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full"></div>
+            </div>
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href="#"
+                  className="flex items-center text-gray-600 hover:text-green-600 transition-all duration-300 group hover:translate-x-1"
+                >
+                  <div className="w-8 h-8 bg-green-50 group-hover:bg-green-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  </div>
+                  <span className="font-medium">Getting Started</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="flex items-center text-gray-600 hover:text-green-600 transition-all duration-300 group hover:translate-x-1"
+                >
+                  <div className="w-8 h-8 bg-blue-50 group-hover:bg-blue-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  </div>
+                  <span className="font-medium">Documentation</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="flex items-center text-gray-600 hover:text-green-600 transition-all duration-300 group hover:translate-x-1"
+                >
+                  <div className="w-8 h-8 bg-purple-50 group-hover:bg-purple-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                  </div>
+                  <span className="font-medium">Best Practices</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="flex items-center text-gray-600 hover:text-green-600 transition-all duration-300 group hover:translate-x-1"
+                >
+                  <div className="w-8 h-8 bg-orange-50 group-hover:bg-orange-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                  </div>
+                  <span className="font-medium">Code Examples</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="flex items-center text-gray-600 hover:text-green-600 transition-all duration-300 group hover:translate-x-1"
+                >
+                  <div className="w-8 h-8 bg-red-50 group-hover:bg-red-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+                  </div>
+                  <span className="font-medium">FAQ</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-lg font-bold mb-1 text-gray-800">
+                  Stay Updated
+                </h4>
+                <div className="w-28 h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full"></div>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Get the latest MERN stack insights, tutorials, and community
+                updates delivered straight to your inbox.
+              </p>
+
+              <div className="space-y-4">
+                <div className="relative">
+                  <div className="flex rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                    <Input
+                      type="email"
+                      placeholder="Enter your email address"
+                      className="bg-white border-0 text-gray-900 placeholder-gray-500 focus:ring-0 focus:border-0 rounded-r-none flex-1 px-4 py-3"
+                    />
+                    <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 rounded-l-none px-8 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                      Subscribe
+                    </Button>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <p className="text-xs text-gray-500 font-medium">
+                    Join 25,000+ developers • No spam, unsubscribe anytime
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-4">
+              <h5 className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
+                Get In Touch
+              </h5>
+              <div className="space-y-3">
+                <div className="flex items-center text-gray-600 hover:text-blue-600 transition-colors group">
+                  <div className="w-8 h-8 bg-blue-50 group-hover:bg-blue-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <MapPin className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <span className="text-sm font-medium">San Francisco, CA</span>
+                </div>
+                <div className="flex items-center text-gray-600 hover:text-blue-600 transition-colors group">
+                  <div className="w-8 h-8 bg-green-50 group-hover:bg-green-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <Phone className="w-4 h-4 text-green-600" />
+                  </div>
+                  <span className="text-sm font-medium">+1 (555) 123-4567</span>
+                </div>
+                <div className="flex items-center text-gray-600 hover:text-blue-600 transition-colors group">
+                  <div className="w-8 h-8 bg-purple-50 group-hover:bg-purple-100 rounded-lg flex items-center justify-center mr-3 transition-colors">
+                    <Mail className="w-4 h-4 text-purple-600" />
+                  </div>
+                  <span className="text-sm font-medium">
+                    hello@mernecosystem.com
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
