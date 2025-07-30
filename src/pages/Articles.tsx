@@ -463,7 +463,7 @@ const Articles = () => {
               key={article.id}
             >
               <div className="relative p-6 overflow-hidden">
-                <Link to="#" className="block">
+                <Link to="/article/123" className="block">
                   <img
                     src={article.image}
                     alt={article.title}

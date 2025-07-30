@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import Home from "@/pages/Home";
 import Articles from "@/pages/Articles";
 import Authors from "@/pages/Authors";
+import ArticleDetails from "@/pages/ArticleDetails";
 
 const AllRoutes = () => {
   return (
@@ -11,7 +12,7 @@ const AllRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/authors" element={<Authors />} />
-        {/* <Route path="/article/:id" element={<ArticleDetail />} /> */}
+        <Route path="/article/:id" element={<ArticleDetails />} />
         {/* <Route path="/about" element={<About />} /> */}
         {/* <Route path="*" element={<NotFound />} /> */}
       </Route>
