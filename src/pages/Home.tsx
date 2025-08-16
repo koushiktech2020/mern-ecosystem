@@ -609,7 +609,7 @@ const Home = () => {
                         size="lg"
                         className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all"
                       >
-                        <Link to="/authors">View Profile</Link>
+                        <Link to={`/author/${author.id}`}>View Profile</Link>
                       </Button>
                     </div>
                   </Card>
