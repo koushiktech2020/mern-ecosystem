@@ -4,6 +4,7 @@ import Home from "@/pages/Home";
 import Articles from "@/pages/Articles";
 import Authors from "@/pages/Authors";
 import ArticleDetails from "@/pages/ArticleDetails";
+import AuthorDetails from "@/pages/AuthorDetails";
 
 const AllRoutes = () => {
   return (
@@ -13,6 +14,7 @@ const AllRoutes = () => {
         <Route path="/articles" element={<Articles />} />
         <Route path="/authors" element={<Authors />} />
         <Route path="/article/:id" element={<ArticleDetails />} />
+        <Route path="/author/:id" element={<AuthorDetails />} />
         {/* <Route path="/about" element={<About />} /> */}
         {/* <Route path="*" element={<NotFound />} /> */}
       </Route>
